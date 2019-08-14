@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+
+    RewriteEngine on
+    RewriteCond %{HTTP_HOST} ^localhost:8090$ [NC,OR]
+    RewriteCond %{HTTP_HOST} ^localhost:8090$
+    RewriteCond %{REQUEST_URI} !test/
+    RewriteRule (.*) /test/$1 [L]
+
+    Options -Indexes
+    Options -Multiviews
+
+</IfModule>
